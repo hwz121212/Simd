@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{3CFD8D3C-5D69-47BF-9E96-BCD6AC473C8C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>templateexe</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;SIMD_STATIC;SIMD_USE_INSIDE;_DEBUG;_CONSOLE;</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..;$(SolutionDir)thirdparty\Simd-5.0.115\src;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration)\;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libSimd.lib;libSse2.lib;libSse41.lib;libAvx1.lib;libAvx2.lib;libBase.lib;libAvx512bw.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;SIMD_STATIC;SIMD_USE_INSIDE;NDEBUG;_CONSOLE;</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..;$(SolutionDir)thirdparty\Simd-5.0.115\src;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration)\;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libSimd.lib;libSse2.lib;libSse41.lib;libAvx1.lib;libAvx2.lib;libBase.lib;libAvx512bw.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="TestAbsDifference.cpp" />
+    <ClCompile Include="TestAddFeatureDifference.cpp" />
+    <ClCompile Include="TestAnyToAny.cpp" />
+    <ClCompile Include="TestAnyToBayer.cpp" />
+    <ClCompile Include="TestAnyToBgra.cpp" />
+    <ClCompile Include="TestAnyToYuv.cpp" />
+    <ClCompile Include="TestBackground.cpp" />
+    <ClCompile Include="TestBase64.cpp" />
+    <ClCompile Include="TestBayerToBgr.cpp" />
+    <ClCompile Include="TestBayerToBgra.cpp" />
+    <ClCompile Include="TestBFloat16.cpp" />
+    <ClCompile Include="TestBgr48pToBgra32.cpp" />
+    <ClCompile Include="TestBinarization.cpp" />
+    <ClCompile Include="TestCheckC.c" />
+    <ClCompile Include="TestCheckCpp.cpp" />
+    <ClCompile Include="TestConditional.cpp" />
+    <ClCompile Include="TestContour.cpp" />
+    <ClCompile Include="TestCopy.cpp" />
+    <ClCompile Include="TestCrc32.cpp" />
+    <ClCompile Include="TestData.cpp" />
+    <ClCompile Include="TestDeinterleave.cpp" />
+    <ClCompile Include="TestDetection.cpp" />
+    <ClCompile Include="TestDifferenceSum.cpp" />
+    <ClCompile Include="TestDrawing.cpp" />
+    <ClCompile Include="TestEdgeBackground.cpp" />
+    <ClCompile Include="TestFile.cpp" />
+    <ClCompile Include="TestFill.cpp" />
+    <ClCompile Include="TestFilter.cpp" />
+    <ClCompile Include="TestFloat16.cpp" />
+    <ClCompile Include="TestFloat32.cpp" />
+    <ClCompile Include="TestFont.cpp" />
+    <ClCompile Include="TestGemm.cpp" />
+    <ClCompile Include="TestHistogram.cpp" />
+    <ClCompile Include="TestHog.cpp" />
+    <ClCompile Include="TestHogLite.cpp" />
+    <ClCompile Include="TestHtml.cpp" />
+    <ClCompile Include="TestImageIO.cpp" />
+    <ClCompile Include="TestImageMatcher.cpp" />
+    <ClCompile Include="TestIntegral.cpp" />
+    <ClCompile Include="TestInterference.cpp" />
+    <ClCompile Include="TestInterleave.cpp" />
+    <ClCompile Include="TestLog.cpp" />
+    <ClCompile Include="TestMotion.cpp" />
+    <ClCompile Include="TestNeural.cpp" />
+    <ClCompile Include="TestNeuralConvolution.cpp" />
+    <ClCompile Include="TestOperation.cpp" />
+    <ClCompile Include="TestPerformance.cpp" />
+    <ClCompile Include="TestReduce.cpp" />
+    <ClCompile Include="TestReorder.cpp" />
+    <ClCompile Include="TestResize.cpp" />
+    <ClCompile Include="TestSegmentation.cpp" />
+    <ClCompile Include="TestShift.cpp" />
+    <ClCompile Include="TestStatistic.cpp" />
+    <ClCompile Include="TestStretchGray.cpp" />
+    <ClCompile Include="TestString.cpp" />
+    <ClCompile Include="TestSvm.cpp" />
+    <ClCompile Include="TestSynet.cpp" />
+    <ClCompile Include="TestSynetActivation.cpp" />
+    <ClCompile Include="TestSynetConversion.cpp" />
+    <ClCompile Include="TestSynetConvolution32f.cpp" />
+    <ClCompile Include="TestSynetConvolution8i.cpp" />
+    <ClCompile Include="TestSynetDeconvolution32f.cpp" />
+    <ClCompile Include="TestSynetFused.cpp" />
+    <ClCompile Include="TestSynetInnerProduct.cpp" />
+    <ClCompile Include="TestSynetMergedConvolution32f.cpp" />
+    <ClCompile Include="TestSynetMergedConvolution8i.cpp" />
+    <ClCompile Include="TestSynetPooling.cpp" />
+    <ClCompile Include="TestSynetScale.cpp" />
+    <ClCompile Include="TestTable.cpp" />
+    <ClCompile Include="TestTexture.cpp" />
+    <ClCompile Include="TestTransform.cpp" />
+    <ClCompile Include="TestUtils.cpp" />
+    <ClCompile Include="TestUyvyToBgr.cpp" />
+    <ClCompile Include="TestVideo.cpp" />
+    <ClCompile Include="TestWinograd.cpp" />
+    <ClCompile Include="TestYuvToAny.cpp" />
+    <ClCompile Include="TestYuvToBgra.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TestConfig.h" />
+    <ClInclude Include="TestConsole.h" />
+    <ClInclude Include="TestData.h" />
+    <ClInclude Include="TestFile.h" />
+    <ClInclude Include="TestHtml.h" />
+    <ClInclude Include="TestLog.h" />
+    <ClInclude Include="TestPerformance.h" />
+    <ClInclude Include="TestString.h" />
+    <ClInclude Include="TestSynetConvolutionParam.h" />
+    <ClInclude Include="TestTable.h" />
+    <ClInclude Include="TestTensor.h" />
+    <ClInclude Include="TestUtils.h" />
+    <ClInclude Include="TestVideo.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

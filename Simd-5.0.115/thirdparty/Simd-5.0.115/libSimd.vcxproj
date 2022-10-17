@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1FFC56DC-778F-4E17-90FA-5CC2A4B79247}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)lib\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)lib\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>src</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling />
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;SIMD_STATIC;_DEBUG;_WINDOWS;_USRDLL;</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\";ZLIB_DLL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..;$(SolutionDir)include;$(SolutionDir)thirdparty;</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>libSse2.lib;libSse41.lib;libAvx1.lib;libAvx2.lib;libBase.lib;libAvx512bw.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(SolutionDir)lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>src</AdditionalIncludeDirectories>
+      <ExceptionHandling />
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;SIMD_STATIC;NDEBUG;_WINDOWS;_USRDLL;</PreprocessorDefinitions>
+      <DebugInformationFormat />
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";ZLIB_DLL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..;$(SolutionDir)include;$(SolutionDir)thirdparty;</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>libSse2.lib;libSse41.lib;libAvx1.lib;libAvx2.lib;libBase.lib;libAvx512bw.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(SolutionDir)lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Simd\SimdAlignment.h" />
+    <ClInclude Include="src\Simd\SimdAllocator.hpp" />
+    <ClInclude Include="src\Simd\SimdAmx.h" />
+    <ClInclude Include="src\Simd\SimdArray.h" />
+    <ClInclude Include="src\Simd\SimdAvx1.h" />
+    <ClInclude Include="src\Simd\SimdAvx2.h" />
+    <ClInclude Include="src\Simd\SimdAvx512bf16.h" />
+    <ClInclude Include="src\Simd\SimdAvx512bw.h" />
+    <ClInclude Include="src\Simd\SimdAvx512vnni.h" />
+    <ClInclude Include="src\Simd\SimdBase.h" />
+    <ClInclude Include="src\Simd\SimdConfig.h" />
+    <ClInclude Include="src\Simd\SimdConst.h" />
+    <ClInclude Include="src\Simd\SimdContour.hpp" />
+    <ClInclude Include="src\Simd\SimdCopyPixel.h" />
+    <ClInclude Include="src\Simd\SimdCpu.h" />
+    <ClInclude Include="src\Simd\SimdDefs.h" />
+    <ClInclude Include="src\Simd\SimdDetection.hpp" />
+    <ClInclude Include="src\Simd\SimdDrawing.hpp" />
+    <ClInclude Include="src\Simd\SimdEnable.h" />
+    <ClInclude Include="src\Simd\SimdExp.h" />
+    <ClInclude Include="src\Simd\SimdExtract.h" />
+    <ClInclude Include="src\Simd\SimdFont.hpp" />
+    <ClInclude Include="src\Simd\SimdFrame.hpp" />
+    <ClInclude Include="src\Simd\SimdGaussianBlur.h" />
+    <ClInclude Include="src\Simd\SimdGemm.h" />
+    <ClInclude Include="src\Simd\SimdImageLoad.h" />
+    <ClInclude Include="src\Simd\SimdImageMatcher.hpp" />
+    <ClInclude Include="src\Simd\SimdImageSave.h" />
+    <ClInclude Include="src\Simd\SimdInit.h" />
+    <ClInclude Include="src\Simd\SimdLib.h" />
+    <ClCompile Include="src\Simd\SimdLib.cpp" />
+    <ClInclude Include="src\Simd\SimdLib.hpp" />
+    <ClInclude Include="src\Simd\SimdLoad.h" />
+    <ClInclude Include="src\Simd\SimdLog.h" />
+    <ClInclude Include="src\Simd\SimdMath.h" />
+    <ClInclude Include="src\Simd\SimdMemory.h" />
+    <ClInclude Include="src\Simd\SimdMemoryStream.h" />
+    <ClInclude Include="src\Simd\SimdMotion.hpp" />
+    <ClInclude Include="src\Simd\SimdMsa.h" />
+    <ClInclude Include="src\Simd\SimdNeon.h" />
+    <ClInclude Include="src\Simd\SimdNeural.hpp" />
+    <ClInclude Include="src\Simd\SimdParallel.hpp" />
+    <ClInclude Include="src\Simd\SimdPerformance.h" />
+    <ClInclude Include="src\Simd\SimdPixel.hpp" />
+    <ClInclude Include="src\Simd\SimdPoint.hpp" />
+    <ClInclude Include="src\Simd\SimdPyramid.hpp" />
+    <ClInclude Include="src\Simd\SimdRectangle.hpp" />
+    <ClInclude Include="src\Simd\SimdResizer.h" />
+    <ClInclude Include="src\Simd\SimdRuntime.h" />
+    <ClInclude Include="src\Simd\SimdShift.hpp" />
+    <ClInclude Include="src\Simd\SimdSse2.h" />
+    <ClInclude Include="src\Simd\SimdSse41.h" />
+    <ClInclude Include="src\Simd\SimdSsse3.h" />
+    <ClInclude Include="src\Simd\SimdStore.h" />
+    <ClInclude Include="src\Simd\SimdSynet.h" />
+    <ClInclude Include="src\Simd\SimdSynetConvolution32f.h" />
+    <ClInclude Include="src\Simd\SimdSynetConvolution32fCommon.h" />
+    <ClInclude Include="src\Simd\SimdSynetConvolution8i.h" />
+    <ClInclude Include="src\Simd\SimdSynetConvolution8iCommon.h" />
+    <ClInclude Include="src\Simd\SimdSynetDeconvolution32f.h" />
+    <ClInclude Include="src\Simd\SimdSynetInnerProduct32f.h" />
+    <ClInclude Include="src\Simd\SimdSynetMergedConvolution32f.h" />
+    <ClInclude Include="src\Simd\SimdSynetMergedConvolution8i.h" />
+    <ClInclude Include="src\Simd\SimdSynetScale8i.h" />
+    <ClInclude Include="src\Simd\SimdTime.h" />
+    <ClInclude Include="src\Simd\SimdVersion.h" />
+    <ClInclude Include="src\Simd\SimdView.hpp" />
+    <ClInclude Include="src\Simd\SimdVmx.h" />
+    <ClInclude Include="src\Simd\SimdVsx.h" />
+    <ClInclude Include="src\Simd\SimdXml.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
