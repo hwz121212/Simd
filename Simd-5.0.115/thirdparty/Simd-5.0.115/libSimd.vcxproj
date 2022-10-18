@@ -57,10 +57,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;SIMD_STATIC;_DEBUG;_WINDOWS;_USRDLL;</PreprocessorDefinitions>
     </ClCompile>
-    <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\";ZLIB_DLL</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..;$(SolutionDir)include;$(SolutionDir)thirdparty;</AdditionalIncludeDirectories>
-    </ResourceCompile>
+    
     <Link>
       <AdditionalDependencies>libSse2.lib;libSse41.lib;libAvx1.lib;libAvx2.lib;libBase.lib;libAvx512bw.lib;</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration)\</AdditionalLibraryDirectories>
@@ -84,10 +81,7 @@
       <PreprocessorDefinitions>WIN32;SIMD_STATIC;NDEBUG;_WINDOWS;_USRDLL;</PreprocessorDefinitions>
       <DebugInformationFormat />
     </ClCompile>
-    <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";ZLIB_DLL</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..;$(SolutionDir)include;$(SolutionDir)thirdparty;</AdditionalIncludeDirectories>
-    </ResourceCompile>
+    
     <Link>
       <AdditionalDependencies>libSse2.lib;libSse41.lib;libAvx1.lib;libAvx2.lib;libBase.lib;libAvx512bw.lib;</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration)\</AdditionalLibraryDirectories>
